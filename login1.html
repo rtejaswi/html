@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="form.css">
+    <script>
+        function add(){
+            var un=document.getElementById("un").value;
+            var pw=document.getElementById("pw").value;
+            var reg=/^[A-Z a-z]+$/;
+            var pswck=/^[0-9]+$/;
+            var res=reg.test(un);
+            var res1=pswck.test(pw);
+
+            if(un.trim()=="" || pw.trim()==""){
+                alert("All field should be filled");
+                return false;
+            }
+            else if(!res){
+                alert("User name should be in alphabets");
+                return false;
+            }
+            else if(!res1){
+                alert("Password should be in numbers");
+                return false;
+            }
+            else{
+                alert("Successfully logged");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+
+        <h2>Login Form</h2>
+        <div>
+            <label for="">User Name</label><br>
+            <input type="text" name="name" placeholder="Please enter user name" id="un"><br>
+        </div>
+        <div>
+            <label for="">password</label><br>
+            <input type="password" name="password" placeholder="Please Enter password" id="pw"><br>
+        </div>
+        <br>
+        <input type="submit" value="Login" formaction="home.html" onclick="return add()">
+        <input type="submit" value="Register" formaction="register.html">
+        
+    </form>
+</body>
+</html>

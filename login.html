@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>SpaceX</title>
+<link rel="stylesheet" media="screen" href="style.css">
+    <script>
+        function add(){
+            var fn=document.getElementById("fn").value;
+            var ln=document.getElementById("ln").value;
+            var email=document.getElementById("em").value;
+            var phone=document.getElementById("mob").value;
+            var r1=document.getElementById("r1").value;
+            var r2=document.getElementById("r2").value;
+            var reg=/^[A-Z a-z]+$/;
+            var res=reg.test(fn);
+            var res1=reg.test(ln);
+
+            if(!res){
+                alert("First Name should be in alphabets");
+                return false;
+            }
+            else if(!res1) {
+                alert("Last Name should be in alphabets");
+                return false;
+            }
+            else if(phone.length!=10){
+                alert("Number should have 10 digits");
+                return false;
+            }       
+            else if(fn.trim()=="" || ln.trim()=="" || email.trim()=="" || phone.trim()==""){
+                alert("All field should be filled");
+                return false;
+            }
+            else{
+                alert("Successfully registered");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body bgcolor="red" background-image: url('img1/f1.jpg')>
+    <font face="forte">
+<marquee style="color:orange; font-size:20px;">Welcome to SpaceX</marquee><hr>
+<center>
+<img src="img1/xlogo1.jpg" style="width:100%; height:250px;">
+<br>
+
+<a href="home.html"><button style="background-color:goldenrod;height:50px; width:100px;"><font face="forte" font size="4px">Home</font></button></a>
+
+<a href="photo.html"><button style="background-color:gold;height:50px; width:100px;"><font face="forte" font size="4px">Photo</font></button></a>
+
+<a href="about.html"><button style="background-color:gold;height:50px; width:100px;"><font face="forte" font size="4px">SpaceX</font></button></a>
+
+<a href="message.html"><button style="background-color:gold;height:50px; width:100px;"><font face="forte" font size="4px">Messages</font></button></a>
+
+<a href="about us.html"><button style="background-color:gold;height:50px; width:100px;"><font face="forte" font size="4px">About us</font></button></a>
+
+<a href="login.html"><button style="background-color:gold;height:50px; width:100px;"><font face="forte" font size="4px">login</font></button></a>
+
+<a href="Payment.html"><button style="background-color:gold;height:50px; width:100px;"><font face="forte" font size="4px">Payment</font></button></a>
+</center>
+<center>
+ <form action="">
+            <h2>Login Here</h2>
+        <label for="Firstname">FirstName</label><br>
+        <input type="text" name="name" id="fn"><br>
+        <label for="Lastname">LastName</label><br>
+        <input type="text" name="name" id="ln"><br>
+        <label for="Email">Email</label><br>
+        <input type="email" name="email" id="em"><br>
+        <label for="mobile">Mobile</label><br>
+        <input type="tel" name="mobile" id="mob"><br>
+        <label for="gender">Gender :</label><br>
+        <input type="radio" name="gender" id="gender">Male
+        <input type="radio" name="gender" id="gender">Female
+        <input type="radio" name="gender" id="gender">Others <br>
+        <label for="Upload a file">Upload Your Resume :</label><br>
+        <input type="file" name="file" id=""><br>
+        <label for="Comments">Comments :</label><br><textarea name="text" id="" cols="30" rows="10"></textarea><br>
+        <input type="checkbox" name="check" id="check">
+        <label for="check">I agree to the terms and comditions :</label>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</center>
+<center>
+<B>Thankyou for visiting our website</B>
+</center>

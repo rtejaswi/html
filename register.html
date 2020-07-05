@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css">
+    <script>
+        function add(){
+            var fn=document.getElementById("fn").value;
+            var ln=document.getElementById("ln").value;
+            var email=document.getElementById("em").value;
+            var phone=document.getElementById("mob").value;
+            var r1=document.getElementById("r1").value;
+            var r2=document.getElementById("r2").value;
+            var reg=/^[A-Z a-z]+$/;
+            var res=reg.test(fn);
+            var res1=reg.test(ln);
+
+            if(!res){
+                alert("First Name should be in alphabets");
+                return false;
+            }
+            else if(!res1) {
+                alert("Last Name should be in alphabets");
+                return false;
+            }
+            else if(phone.length!=10){
+                alert("Number should have 10 digits");
+                return false;
+            }       
+            else if(fn.trim()=="" || ln.trim()=="" || email.trim()=="" || phone.trim()==""){
+                alert("All field should be filled");
+                return false;
+            }
+            else{
+                alert("Successfully registered");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="login.html" onsubmit="return add()">
+        <div>
+        <h2>Sports Club</h2>
+        <label for="">First Name</label><br><br>
+        <input type="text" name="name" id="fn"><br><br>
+        <label for="">Last Name</label><br><br>
+        <input type="text" name="lname" id="ln"><br><br>
+        <label for="">Email</label><br><br>
+        <input type="email" name="email" id="em"><br><br>
+        <label for="">Mobile</label><br><br>
+        <input type="number" name="" id="mob"><br><br>
+        <label for="">Gender</label>
+        <input type="radio" name="r1" id="r1">Male
+        <input type="radio" name="r1" id="r2">Female<br><br><br>
+        
+        <input type="submit" value="Register" id="a1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="Reset" id="a1">
+    </div>
+    </form>
+</body>
+</html>
